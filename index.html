@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="image-section">
+    <div class="logo">
+      <img src="/Images/62607.jpg" alt="">
+      <p>THE ODIN PROJECT</p>
+    </div>
+
+    <img src="./Images/space-background.jpg" alt="" class="background-image">
+  </div>
+   
+  <div class="page-content">
+
+    
+    
+    <div class="header">
+
+
+        <p>This is not a real online service! You know you need something <br>
+           like this in your life to help you realize your deepest dreams. <br>
+           Sign up <i>now</i> to get started. <br>
+           <br>
+           You <i>know</i> you want to!</p>
+    </div>
+
+
+    <div class="form">
+        <p>Let's do this!</p>
+
+        <form action="POST">
+          <fieldset>
+            <li>
+              <label for="first_name">FIRST NAME</label>
+              <input type="text" id="first_name" name="first_name">
+            </li>
+            <li>
+              <label for="last_name">LAST NAME</label>
+              <input type="text" id="last_name" name="last_name">
+            </li>
+          </fieldset>
+
+          <fieldset>
+            <li>
+              <label for="mail">EMAIL</label>
+              <input type="email" id="mail" name="e-mail">
+            </li>
+            <li>
+              <label for="tel">TELEPHONE NUMBER</label>
+              <input type="tel" id="tel" name="telephone">
+            </li>
+          </fieldset>
+
+          <fieldset>
+            <li>
+              <label for="password">PASSWORD</label>
+              <input type="password" id="password" name="password">
+            </li>
+            <li>
+              <label for="password_confirm">CONFIRM PASSWORD</label>
+              <input type="password" id="password_confirm" name="password">
+            </li>
+          </fieldset>
+
+        </form>
+    </div>
+
+
+    <div class="footer">
+        <button class="submit">Create Account</button>
+        <p>Already have an account? <a href="dummy">Log in</a></p>
+    </div>
+
+  </div>
+
+    
+</body>
+
+<script>
+  let password = document.getElementById('password');
+  let passwordConfirm = document.getElementById('password_confirm');
+
+  password.addEventListener('input', evaluate);
+  passwordConfirm.addEventListener('input', evaluate);
+
+  function evaluate() {
+  if (password.value === '' || passwordConfirm.value != password.value) {
+        if (password.classList.contains('error') || passwordConfirm.classList.contains('error')) {
+          console.log("a");
+        } else {
+          console.log("b");
+          password.classList.add('error');
+          passwordConfirm.classList.add('error');
+        }} else {
+          console.log(password.value);
+          password.classList.remove('error');
+          passwordConfirm.classList.remove('error');
+        }
+  };
+    
+  
+
+</script>
+
+</html>
